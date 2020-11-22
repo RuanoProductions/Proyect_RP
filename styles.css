@@ -46,6 +46,11 @@ code::selection {
     counter-reset: item;
 }
 
+.ahre {
+    padding: 5px;
+    background-color: #464646;
+}
+
 .index li {
     display: block;
 }
@@ -53,6 +58,10 @@ code::selection {
 .index li:before {
     content: counters(item, ".");
     counter-increment: item;
+}
+
+.index {
+    padding: 20px;
 }
 
 .contenedor {
