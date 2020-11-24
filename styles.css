@@ -76,13 +76,25 @@ code::selection {
 .menu-navegacion li {
     padding: 20px;
 }
-.menu-navegacion li > a{
+.menu-navegacion li > a {
     padding: 10px;
     display: block;
     text-decoration: none;
     min-width: 100px;
+    background-color: #636363;
+}
+.menu-navegacion ul > a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+    background-color: #636363;
 }
 .menu-navegacion li > a:hover {
+    color: #00ffff;
+    background-color: #ff377f;
+}
+.menu-navegacion ul > a:hover {
     color: #00ffff;
     background-color: #ff377f;
 }
@@ -90,12 +102,13 @@ code::selection {
     float: left;
     text-align: center;
 }
-.menu-navegacion > li > ul{
+.menu-navegacion > li > ul {
     display: none;
 }
 .menu-navegacion > li:hover > ul {
     display: block;
     position: absolute;
+    text-align: center;
 }
 .nav-brand {
     width: 50px;
