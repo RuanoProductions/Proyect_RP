@@ -1,7 +1,4 @@
-/* ------- */
 /* GENERAL */
-/* ------- */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,11 +24,7 @@ a {
     text-decoration: none;
 }
 
-/* ----------------- */
-/* COLORES GENERALES */
-/* ----------------- */
-
-/* Colores del navegador */
+/* COLORES DEL NAVEGADOR */
 p::selection,
 h1::selection {
     background: #ff377f;
@@ -42,13 +35,12 @@ code::selection {
 }
 
 /* ÍNDICE */
-.index ol {
+.index ul {
     counter-reset: item;
 }
 
-.ahre {
-    padding: 5px;
-    background-color: #464646;
+.index ul .lower-alpha {
+    padding-left: 10px;
 }
 
 .index li {
@@ -69,25 +61,46 @@ code::selection {
     margin: auto;
 }
 
+.spoiler:hover {
+    color: #ff377f;
+}
+
 /* NAVEGACIÓN */
 .navegacion ul {
     list-style: none;
     font-size: 17px;
-    display: flex;
     align-items: center;
     height: 60px;
     padding: 20px 0;
 }
-
-.navegacion li {
+.menu-navegacion li {
     padding: 20px;
 }
-
+.menu-navegacion li > a{
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+}
+.menu-navegacion li > a:hover {
+    color: #00ffff;
+    background-color: #ff377f;
+}
+.menu-navegacion > li{
+    float: left;
+    text-align: center;
+}
+.menu-navegacion > li > ul{
+    display: none;
+}
+.menu-navegacion > li:hover > ul {
+    display: block;
+    position: absolute;
+}
 .nav-brand {
     width: 50px;
 }
-
-.navegacion a:hover {
+.menu-navegacion a:hover {
     color: #00ffff;
 }
 
@@ -103,4 +116,25 @@ code::selection {
 .navegacion ul.menu-navegacion {
     flex: 1;
     margin-left: 20px;
+}
+
+/* CONTEXTO */
+.context {
+    padding: 5px;
+    background-color: #464646;
+}
+
+.contenedor {
+    background-color: #464646;
+    padding: 20px;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: #636363;
+    width: 90%;
 }
