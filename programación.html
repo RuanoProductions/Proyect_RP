@@ -1,15 +1,18 @@
 <html>
     <head>
+        <title>Ruano Productions</title>
         <h1 class="titulo">Ruano Productions</h1>
-        <p>Bienvenido al mundo de la producción audiovisual.</p>
+        <p class="sub-titulo">Bienvenido al mundo de la producción audiovisual.</p>
         <!-- FONT AWESOME -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <!-- FONT OSWALD -->
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+        <!-- FONT YANTRAMANAV -->
+        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500&display=swap" rel="stylesheet">
         <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="styles.css"></link>
+        <link rel="stylesheet" href="styles.css">
         <!-- HIGHLIGHTS CODE -->
-        <link rel="stylesheet" href="\Highlights\styles\monokai-sublime.css"></link>
+        <link rel="stylesheet" href="\Highlights\styles\monokai-sublime.css">
         <script src="\Highlights\highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
@@ -22,87 +25,21 @@
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="http://127.0.0.1:5500/programación.html">Programación</a>
                         <ul>
+                            <a href="http://127.0.0.1:5500/pascal.html">Pascal</a>
                             <a href="http://127.0.0.1:5500/python.html">Python</a>
                         </ul>
                     </li>
                     <li><a href="#videos">Videos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="#acerca-de">Acerca de</a></li>
+                    <li><a href="http://127.0.0.1:5500/acerca-de.html">Acerca de</a></li>
                 </ul>
             </nav>
             <hr>
-            <div class="container">
-                <nav class="index">
-                    <ul class="has-white-color has-text-color" type="1">
-                        <li><span style="color:#000000;" class="has-inline-color"><a href="#inicializar"> Inicializar</a></span></li>
-                        <li><span style="color:#000000;" class="has-inline-color"><a href="#guardar"> Guardar</a></span></li>
-                        <li><span style="color:#000000;" class="has-inline-color"><a href="#mostrar"> Mostrar</a></span></li>
-                        <li><span style="color:#000000;" class="has-inline-color"><a href="#bloques"> Bloques</a></span>
-                            <ul class="lower-alpha">
-                                <li><span style="color:#000000;"><a href="#bloques-menu-de-opciones"> Menú de opciones</a></span></li>
-                            </ul>
-                        </li>
-                        <li><span style="color:#000000;" class="has-inline-color"><a href="#ejemplos_pascal"> Código: Pascal</a></span>
-                            <ul class="lower-alpha">
-                                <li><span style="color:#000000"><a href="#ordenamiento"> Ordenamiento</a></span></li>
-                                <li><span style="color:#000000"><a href="#busqueda"> Busqueda</a></span></li>
-                            </ul>
-                        </li>
-                   </ul>
-                </nav>
-            </div>
+            <!-- DESDE ESTA LÍNEA HACIA ABAJO: CONTENIDO DE LAS PÁGINAS DE ORIGEN -->
             <p class="context">En este apartado veremos todo lo relacionado al lenguaje Pascal, el cual ya está quedan dun poco anticuiado pero sigue habiendo personas, sobre todo estudiantes, que lo siguen viendo y es por eso que hago este post para poder lograr un mejor entendimiento de estos conceptos, desde mi forma de explicar.</p>
-            <pre>
-                <code class="delphi">
-                    Procedure menu_3;  {comentario}
-                    VAR
-                       i: integer;
-                    begin
-                         cursoroff;
-                         ClrScr;
-                         GotoXY(29,5);
-                         ascii('%c', 201);       { ╔ }
-                         GotoXY(89,5);
-                         ascii('%c', 187);       { ╗ }
-                         For i := 30 to 88 do
-                         begin
-                              GotoXY(i,5);
-                              ascii('%c', 205);  { ═ }
-                         end;
-                         For i := 1 to 6 do
-                         begin
-                              GotoXY(29,5 + i);
-                              ascii('%c', 186);  { ║ }
-                              GotoXY(89,5 + i);
-                              ascii('%c', 186);  { ║ }
-                         end;
-                         GotoXY(29,5 + 2);
-                         ascii('%c', 204);       { ╠ }
-                         GotoXY(89,5 + 2);
-                         ascii('%c', 185);       { ╣ }
-                         For i := 30 to 88 do
-                         begin
-                              GotoXY(i,5 + 2);
-                              ascii('%c', 205);  { ═ }
-                         end;
-                         GotoXY(29,5 + 7);
-                         ascii('%c', 200);       { ╚ }
-                         GotoXY(89,5 + 7);
-                         ascii('%c', 188);       { ╝ }
-                         For i := 30 to 88 do
-                         begin
-                              GotoXY(i,5 + 7);
-                              ascii('%c', 205);  { ═ }
-                         end;
-                         Textcolor(14);
-                         GotoXY(52,6);
-                         Write ('Lista ordenada');
-                    end;
-                </code>
-            </pre>
             <div class="footer">
                 <footer>
-                    <p>Copyright © 2020 - Ruano Productions, todos los derechos reservados.</p>
+                    <p>Copyright <i class="far fa-copyright"></i> 2020 - Ruano Productions, todos los derechos reservados.</p>
                 </footer>
             </div>
         </div>
