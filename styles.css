@@ -110,11 +110,11 @@ code::selection {
     background-color: #636363;
 }
 .menu-navegacion li > a:hover {
-    color: #00ffff;
+    color: #000000;
     background-color: #ff377f;
 }
 .menu-navegacion ul > a:hover {
-    color: #00ffff;
+    color: #000000;
     background-color: #ff377f;
 }
 .menu-navegacion > li {
