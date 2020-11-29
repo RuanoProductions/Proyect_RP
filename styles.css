@@ -33,10 +33,17 @@ a {
     color: #ffffff;
     text-decoration: none;
 }
+.pre-no-code {
+    font-size: 18px;
+    font-family: 'Yantramanav', sans-serif;
+}
+h3, h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 /* COLORES DEL NAVEGADOR */
-p::selection,
-h1::selection {
+*::selection {
     background: #ff377f;
 }
 code::selection {
@@ -86,7 +93,7 @@ code::selection {
     padding: 10px;
     display: block;
     text-decoration: none;
-    min-width: 100px;
+    min-width: 140px;
     background-color: #636363;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -95,7 +102,7 @@ code::selection {
     padding: 10px;
     display: block;
     text-decoration: none;
-    min-width: 100px;
+    min-width: 140px;
     background-color: #636363;
 }
 .menu-navegacion li > a:hover {
@@ -153,24 +160,29 @@ code::selection {
     padding-bottom: 20px;
 }
 .context-python {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 .contenedor {
-    background-color: #464646;
+    background-color: #000000b2;
     padding: 20px;
 }
 .divspoiler a {
-    display: block;
     padding: 3px;
     background-color: #636363;
 }
 .divspoiler a:hover {
-    color: #ff377f;
+    color: #00ffff;
 }
 .spoiler {
+    display: block;
     color: #ff377f;
 }
+.spoiler-text {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
 /* PIE DE PÁGINA */
 footer {
     margin: auto;

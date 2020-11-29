@@ -2,7 +2,7 @@
     <head>
         <title>Ruano Productions</title>
         <h1 class="titulo">Ruano Productions</h1>
-        <p class="sub-titulo">Bienvenido al mundo de la producción audiovisual.</p>
+        <p class="sub-titulo">Bienvenido al mundo de la producción audiovisual y la programación.</p>
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <!-- FONT OSWALD -->
@@ -23,7 +23,7 @@
                     <li><a href="http://127.0.0.1:5500/index.html">Inicio</a></li>
                     <li><a href="#novedades">Novedades</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="http://127.0.0.1:5500/programación.html">Programación</a>
+                    <li><a href="http://127.0.0.1:5500/programación.html">Programación <i class="fas fa-chevron-down"></i></a> <!-- https://fontawesome.com/icons/chevron-down?style=solid -->
                         <ul>
                             <a href="http://127.0.0.1:5500/pascal.html">Pascal</a>
                             <a href="http://127.0.0.1:5500/python.html">Python</a>
@@ -45,7 +45,7 @@
                 else {
                     this.parentNode.nextSibling.childNodes[0].style.display = 'none';}">
                 <i class="fas fa-chevron-down"></i> Índice</a> <!-- https://fontawesome.com/icons/chevron-down?style=solid -->
-                </div><div><div class="spoiler" style="display: none;">
+                </div><div><div class="spoiler">
                     <!-- ÍNDICE -->
                     <nav class="index">
                         <ul class="nivel-1">
@@ -53,6 +53,7 @@
                                 <ul class="nivel-2">
                                     <li><a href="#tda"> Tipo de dato abstracto (TDA)</a></li>
                                     <li><a href="#pilas"> Pilas</a></li>
+                                    <li><a href="#colas"> Colas</a></li>
                                 </ul>
                             </li>
                             <li><a href="#inicializar"> Inicializar</a></li>
@@ -75,8 +76,8 @@
                        </ul>
                     </nav>
                 </div></div>
-                <h2 class="def-conc">Definiciones y conceptos</h2>
-                <h4 class="tda">Tipo de dato abstracto (TDA)</h4>
+                <h2 id="def-conc">Definiciones y conceptos</h2>
+                <h3 id="tda">Tipo de dato abstracto (TDA)</h3>
                 <p class="context-pascal">El tipo de dato abstracto está conformado por: una estructura de datos + un comportamiento</p>
                 <p>Tipos de TDA<br>
                 En los tipos de datos abstractos podemos encontrar
@@ -88,8 +89,8 @@
                         <li>Grafos</li>
                     </ul>
                 </p>
-                <h4 class="pilas">Pilas (concepto)</h4>
-                <p class="context-pascal">Es un TDA formada por una colección ordenada de elementos homogéneos, dinámica, cuyas inserciones y eliminaciones se realizan por un único extremo llamado TOPE o CIMA.<br>
+                <h3 id="pilas">Pilas</h3>
+                <p class="context-pascal">La pila es un TDA formado por una colección ordenada de elementos homogéneos, dinámica, cuyas inserciones y eliminaciones se realizan por un único extremo llamado TOPE o CIMA.<br>
                 Último en entrar - Primero en salir
                 </p>
                 <p>La implementación se puede hacer mediante<br>
@@ -99,58 +100,85 @@
                         <li>Memoria dinámica (punteros)</li>
                     </ul>
                 </p>
-            </div>
-            <p class="context-pascal">En este apartado veremos todo lo relacionado al lenguaje Pascal, el cual ya está quedan dun poco anticuiado pero sigue habiendo personas, sobre todo estudiantes, que lo siguen viendo y es por eso que hago este post para poder lograr un mejor entendimiento de estos conceptos, desde mi forma de explicar.</p>
-            <div class="divspoiler">
-                <a href="javascript:void(0);" class="spoiler-text" onclick="if (this.parentNode.nextSibling.childNodes[0].style.display != '') { this.parentNode.nextSibling.childNodes[0].style.display = ''; } else { this.parentNode.nextSibling.childNodes[0].style.display = 'none';}">Mostrar / Ocultar</a>
-            </div><div><div class="spoiler" style="display: none;">
-            <pre>
-<code class="pascal">VAR
-   i: integer;
-begin
-     cursoroff;
-     ClrScr;
-     GotoXY(29,5);
-     ascii('%c', 201);       { ╔ }
-     GotoXY(89,5);
-     ascii('%c', 187);       { ╗ }
-     For i := 30 to 88 do
-     begin
-          GotoXY(i,5);
-          ascii('%c', 205);  { ═ }
-     end;
-     For i := 1 to 6 do
-     begin
-          GotoXY(29,5 + i);
-          ascii('%c', 186);  { ║ }
-          GotoXY(89,5 + i);
-          ascii('%c', 186);  { ║ }
-     end;
-     GotoXY(29,5 + 2);
-     ascii('%c', 204);       { ╠ }
-     GotoXY(89,5 + 2);
-     ascii('%c', 185);       { ╣ }
-     For i := 30 to 88 do
-     begin
-          GotoXY(i,5 + 2);
-          ascii('%c', 205);  { ═ }
-     end;
-     GotoXY(29,5 + 7);
-     ascii('%c', 200);       { ╚ }
-     GotoXY(89,5 + 7);
-     ascii('%c', 188);       { ╝ }
-     For i := 30 to 88 do
-     begin
-          GotoXY(i,5 + 7);
-          ascii('%c', 205);  { ═ }
-     end;
-     Textcolor(14);
-     GotoXY(52,6);
-     Write ('Lista ordenada');
-</code>
+                <h4>Gráficamente: TDA Pila (implementada sobre un vector)</h4>
+                    <img src="https://raw.githubusercontent.com/RuanoProductions/Proyect_RP/main/img/pila_graficamente.png" alt="pila_graficamente">
+                <h4>Operaciones con TDA Pila</h4>
+                    <ul>
+                        <li type="circle"><pre class="pre-no-code">crear(P)   //inicializa una pila</pre></li>
+                        <li type="circle"><pre class="pre-no-code">apilar(P,X)   //da de alta un elemento a la pila</pre></li>
+                        <li type="circle"><pre class="pre-no-code">desapilar(P,X)   //elimina un elemento de la pila</pre></li>
+                        <li type="circle"><pre class="pre-no-code">tamanio(P)   //devuelve el tamaño de la pila</pre></li>
+                        <li type="circle"><pre class="pre-no-code">pila_vacia(P)   //comprueba si la pila está vacía</pre></li>
+                        <li type="circle"><pre class="pre-no-code">pila_llena(P)   //comprueba si la pila está llena</pre></li>
+                    </ul>
+                <p class="context-pascal">En este apartado veremos todo lo relacionado al lenguaje Pascal, el cual ya está quedando un poco anticuiado pero sigue habiendo personas, sobre todo estudiantes, que lo siguen viendo y es por eso que hago este artículo, para poder lograr un mejor entendimiento de estos conceptos, desde mi manera de explicar.</p>
+                <div class="divspoiler">
+                    <a href="javascript:void(0);" class="spoiler-text"
+                    onclick="if (this.parentNode.nextSibling.childNodes[0].style.display != '') {
+                        this.parentNode.nextSibling.childNodes[0].style.display = ''; }
+                    else {
+                        this.parentNode.nextSibling.childNodes[0].style.display = 'none';}">
+                    <i class="fas fa-chevron-down"></i> Unit: Pilas</a> <!-- https://fontawesome.com/icons/chevron-down?style=solid -->
+                </div><div><div class="spoiler" style="display: none;">
+                <pre>
+<code class="pascal">unit u_pilas;
+{$codepage utf-8}
+interface
+USES
+    crt;
+CONST
+     N = 10;
+TYPE
+    T_dato = record
+                   nom: string[40];
+                   orig: string[40];
+               end;
+    T_pila = record
+                   tope, tam: 0..N;
+                   elem: array [1..N] of T_dato;
+             end;
+              Procedure crear_pila(VAR P: T_pila);
+              Procedure apilar(VAR P: T_pila; X: T_dato);
+              Function pila_llena(VAR P: T_pila): boolean;
+              Function pila_vacia(VAR P: T_pila): boolean;
+              Procedure desapilar(VAR P: T_pila; VAR X: T_dato);
+Implementation
+              Procedure crear_pila(VAR P: T_pila);
+              begin
+                   P.tam := 0;
+                   P.tope := 0;
+              end;
+              Procedure apilar(VAR P: T_pila; X: T_dato);
+              begin
+                   P.tope := (P.tope + 1);
+                   P.elem[P.tope] := X;
+                   inc(P.tam)
+              end;
+              Function pila_llena(VAR P: T_pila): boolean;
+              begin
+                   pila_llena := P.tam = N;
+              end;
+              Function pila_vacia(VAR P: T_pila): boolean;
+              begin
+                   pila_vacia := (P.tam = 0);
+              end;
+              Procedure desapilar(VAR P: T_pila; VAR X: T_dato);
+              begin
+                   X := P.elem[P.tope];
+                   P.tope := (P.tope - 1);
+                   dec(P.tam);
+              end;
+end.</code>
             </div></div>
             </pre>
+                <h3 id="colas">Colas</h3>
+                <p class="context-pascal">La cola es un TDA formada por una colección ordenada de elementos homogéneos, dinámica, cuyas inserciones se realizan por un extremo llamado FINAL y las eliminaciones se realizan por otro extremo llamado FRENTE.<br>
+                Primero en entrar - Primero en salir</p>
+            </div>
         </div>
+        
+
+
         <div class="footer">
             <footer>
                 <p>Copyright <i class="far fa-copyright"></i> 2020 - Ruano Productions, todos los derechos reservados.</p>
