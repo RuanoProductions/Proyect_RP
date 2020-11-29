@@ -83,7 +83,7 @@ code::selection {
     color: #00ffff;
 }
 .index ul .nivel-2 {
-    padding-left: 10px;
+    padding-left: 13px;
 }
 
 /* NAVEGACIÓN */
@@ -140,11 +140,9 @@ code::selection {
 .navegacion ul {
     display: flex;
 }
-
 .navegacion ul li {
     padding: 10px;
 }
-
 .navegacion ul.menu-navegacion {
     flex: 1;
     margin-left: 20px;
@@ -158,14 +156,6 @@ code::selection {
     padding-left: 300px;
     padding-right: 300px;
     text-align: center;
-}
-/*.context-pascal {
-    padding-top: 10px;
-    padding-bottom: 20px;
-}*/
-.context-python {
-    padding-top: 10px;
-    padding-bottom: 20px;
 }
 .contenedor {
     background-color: #000000b2;
