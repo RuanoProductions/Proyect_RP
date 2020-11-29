@@ -189,6 +189,8 @@ end.</code>
                 </p>
                 <h4>Graficamente: TDA Cola (implementada sobre un vector)</h4>
                     <img src="https://raw.githubusercontent.com/RuanoProductions/Proyect_RP/main/img/cola_graficamente.png" alt="cola_graficamente">
+                <h4>Graficamente: TDA Cola circular (implementada sobre un vector)</h4>
+                    <img src="https://raw.githubusercontent.com/RuanoProductions/Proyect_RP/main/img/cola_circular_graficamente.png" alt="cola_circular_graficamente">
                 <h4>Operaciones con TDA Cola</h4>
                     <ul>
                         <li type="circle"><pre class="pre-no-code">crearcola(Q)   //inicializa la cola</pre></li>
@@ -208,9 +210,71 @@ end.</code>
                     <i class="fas fa-chevron-down"></i> Unit: Cola</a> <!-- https://fontawesome.com/icons/chevron-down?style=solid -->
                 </div><div><div class="spoiler" style="display: none;">
                 <pre>
-<code class="pascal">
-    <img src="https://raw.githubusercontent.com/RuanoProductions/Proyect_RP/main/img/mantenimiento.png" alt="mantenimiento">
-</code>
+<code class="pascal">unit u_colas;
+{$codepage utf-8}
+interface
+USES
+    crt;
+CONST
+     K = 10;
+TYPE
+    T_dato = string[40];
+    T_cola = record
+                   frente, final: word;
+                   elem: array [1..K] of T_dato;
+                   tam: word;
+             end;
+              Procedure crear_cola(VAR Q: T_cola);
+              Procedure encolar(VAR Q: T_cola; X: T_dato);
+              Procedure desencolar(VAR Q: T_cola; VAR X: T_dato);
+              Function cola_llena(VAR Q: T_cola): boolean;
+              Function cola_vacia(VAR Q: T_cola): boolean;
+              Procedure desplazar_adelante(VAR Q: T_cola);
+Implementation
+              Procedure crear_cola(VAR Q: T_cola);
+              begin
+                   Q.frente := 1;
+                   Q.final := K;
+                   Q.tam := 0;
+              end;
+              Procedure desplazar_adelante(VAR Q: T_cola);
+              VAR
+                 i, j: byte;
+              begin
+                   j := 0;
+                   For i := 1 to (K - Q.frente) do
+                   begin
+                        Q.elem[I]:= Q.elem[Q.frente + j];
+                        inc(j);
+                   end;
+              end;
+              Procedure encolar(VAR Q: T_cola; X: T_dato);
+              begin
+                   If Q.final = K then
+                   begin
+                        desplazar_adelante(Q);
+                        Q.frente := 1;
+                        Q.final := Q.tam;
+                   end;
+                   inc(Q.final);
+                   Q.elem[Q.final] := X;
+                   inc(Q.tam);
+              end;
+              Procedure desencolar(VAR Q: T_cola; VAR X: T_dato);
+              begin
+                   X :=  Q.elem[Q.frente];
+                   inc(Q.frente);
+                   dec(Q.tam);
+              end;
+              Function cola_llena(VAR Q: T_cola): boolean;
+              begin
+                   cola_llena := Q.tam = K;
+              end;
+              Function cola_vacia(VAR Q: T_cola): boolean;
+              begin
+                   cola_vacia := (Q.tam = 0);
+              end;
+end.</code>
                 </div></div>
                 </pre>
                 <br>
@@ -280,7 +344,7 @@ end.</code>
                 </pre>
                 <br>
 
-                
+
 
             </div>
 
