@@ -37,7 +37,9 @@
             <hr>
             <!-- DESDE ESTA LÍNEA HACIA ABAJO: CONTENIDO DE LAS PÁGINAS DE ORIGEN -->
             <div class="contenedor-nivel-2">
+                <br>
                 <p class="context-pascal">En este apartado veremos todo lo relacionado al lenguaje Pascal, el cual ya está quedan dun poco anticuiado pero sigue habiendo personas, sobre todo estudiantes, que lo siguen viendo y es por eso que hago este post para poder lograr un mejor entendimiento de estos conceptos, desde mi forma de explicar.</p>
+                <br>
                 <div class="divspoiler">
                 <a href="javascript:void(0);" class="spoiler-text"
                 onclick="if (this.parentNode.nextSibling.childNodes[0].style.display != '') {
@@ -76,6 +78,7 @@
                        </ul>
                     </nav>
                 </div></div>
+                <br>
                 <h2 id="def-conc">Definiciones y conceptos</h2>
                 <h3 id="tda">Tipo de dato abstracto (TDA)</h3>
                 <p class="context-pascal">El tipo de dato abstracto está conformado por: una estructura de datos + un comportamiento</p>
@@ -111,8 +114,8 @@
                         <li type="circle"><pre class="pre-no-code">pila_vacia(P)   //comprueba si la pila está vacía</pre></li>
                         <li type="circle"><pre class="pre-no-code">pila_llena(P)   //comprueba si la pila está llena</pre></li>
                     </ul>
-                <p class="context-pascal">En este apartado veremos todo lo relacionado al lenguaje Pascal, el cual ya está quedando un poco anticuiado pero sigue habiendo personas, sobre todo estudiantes, que lo siguen viendo y es por eso que hago este artículo, para poder lograr un mejor entendimiento de estos conceptos, desde mi manera de explicar.</p>
-                <div class="divspoiler">
+                <br>
+                <div class="divspoiler" id="bloque-pilas">
                     <a href="javascript:void(0);" class="spoiler-text"
                     onclick="if (this.parentNode.nextSibling.childNodes[0].style.display != '') {
                         this.parentNode.nextSibling.childNodes[0].style.display = ''; }
@@ -169,14 +172,99 @@ Implementation
                    dec(P.tam);
               end;
 end.</code>
-            </div></div>
-            </pre>
+                </div></div>
+                </pre>
+                <br>
                 <h3 id="colas">Colas</h3>
                 <p class="context-pascal">La cola es un TDA formada por una colección ordenada de elementos homogéneos, dinámica, cuyas inserciones se realizan por un extremo llamado FINAL y las eliminaciones se realizan por otro extremo llamado FRENTE.<br>
                 Primero en entrar - Primero en salir</p>
+                <p>La implementación se puede hacer mediante<br>
+                    <ul>
+                        <li>Vectores</li>
+                        <li>Archivos</li>
+                        <li>Memoria dinámica (punteros)</li>
+                    </ul>
+                </p>
+                <h4>Graficamente: TDA Cola (implementada sobre un vector)</h4>
+                    <img src="https://raw.githubusercontent.com/RuanoProductions/Proyect_RP/main/img/cola_graficamente.png" alt="cola_graficamente">
+                <h4>Operaciones con TDA Cola</h4>
+                    <ul>
+                        <li type="circle"><pre class="pre-no-code">crearcola(Q)   //inicializa la cola</pre></li>
+                        <li type="circle"><pre class="pre-no-code">encolar(Q,X)   //da de alta un elemento en la cola</pre></li>
+                        <li type="circle"><pre class="pre-no-code">desencolar(Q,X)   //elimina un elemento de la cola</pre></li>
+                        <li type="circle"><pre class="pre-no-code">cola_vacia(Q)   //comprueba si la cola está vacía</pre></li>
+                        <li type="circle"><pre class="pre-no-code">cola_llena(Q)   //comprueba si la cola está llena</pre></li>
+                        <li type="circle"><pre class="pre-no-code">cantidad(Q)   //devuelve el tamaño de la cola</pre></li>
+                    </ul>
+                <br>
+                <div class="divspoiler">
+                    <a href="javascript:void(0);" class="spoiler-text"
+                    onclick="if (this.parentNode.nextSibling.childNodes[0].style.display != '') {
+                        this.parentNode.nextSibling.childNodes[0].style.display = ''; }
+                    else {
+                        this.parentNode.nextSibling.childNodes[0].style.display = 'none';}">
+                    <i class="fas fa-chevron-down"></i> Unit: Colas</a> <!-- https://fontawesome.com/icons/chevron-down?style=solid -->
+                </div><div><div class="spoiler" style="display: none;">
+                <pre>
+<code class="pascal">unit u_colas;
+{$codepage utf-8}
+interface
+USES
+    crt;
+CONST
+     K = 10;
+TYPE
+    T_dato = string;
+    T_cola = record
+                   frente, final: word;
+                   elem: array [1..K] of T_dato;
+                   tam: word;
+               end;
+              Procedure crear_cola(VAR Q: T_cola);
+              Procedure encolar(VAR Q: T_cola; X: T_dato);
+              Procedure desencolar(VAR Q: T_cola; VAR X: T_dato);
+              Function cola_llena(VAR Q: T_cola): boolean;
+              Function cola_vacia(VAR Q: T_cola): boolean;
+Implementation
+              Procedure crear_cola(VAR Q: T_cola);
+              begin
+                   Q.frente := 1;
+                   Q.final := K;
+                   Q.tam := 0;
+              end;
+              Procedure encolar(VAR Q: T_cola; X: T_dato);
+              begin
+                   If Q.final = K then
+                   Q.final := 1
+                   Else
+                   inc(Q.final);
+                   Q.elem[Q.final] := X;
+                   inc(Q.tam);
+              end;
+              Procedure desencolar(VAR Q: T_cola; VAR X: T_dato);
+              begin
+                   X := Q.elem[Q.frente];
+                   If Q.frente = K then
+                   Q.frente := 1
+                   Else
+                   inc(Q.frente);
+                   dec(Q.tam);
+              end;
+              Function cola_llena(VAR Q: T_cola): boolean;
+              begin
+                   cola_llena := (Q.tam = K);
+              end;
+              Function cola_vacia(VAR Q: T_cola): boolean;
+              begin
+                   cola_vacia := (Q.tam = 0);
+              end;
+end.</code>
+                </div></div>
+                </pre>
+                <br>
             </div>
         </div>
-        
+
 
 
         <div class="footer">

@@ -41,6 +41,9 @@ h3, h4 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+code {
+    font-size: 14px;
+}
 
 /* COLORES DEL NAVEGADOR */
 *::selection {
@@ -62,7 +65,8 @@ code::selection {
     counter-increment: item;
 }
 .index {
-    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .contenedor {
     width: 90%;
@@ -155,10 +159,10 @@ code::selection {
     padding-right: 300px;
     text-align: center;
 }
-.context-pascal {
+/*.context-pascal {
     padding-top: 10px;
     padding-bottom: 20px;
-}
+}*/
 .context-python {
     padding-top: 10px;
     padding-bottom: 20px;
